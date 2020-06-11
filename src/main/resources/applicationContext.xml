@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--将指定类TestDaoImpl配置给Spring,即注册一个TestDaoImpl对象，让Spring创建其实例-->
+    <!--
+    一个Bean标签可以注册一个组件(对象、类)
+    class:写要注册的组件的全类名
+    id:这个对象的唯一标识
+    -->
+    <bean id="person1" class="com.lea.domain.Person"/>
+    <!--使用构造器方法注入-->
+    <bean id="person2" class="com.lea.domain.Person">
+        <constructor-arg name="name" value="泰斗贤若如"></constructor-arg>
+        <constructor-arg name="sex" value="男"></constructor-arg>
+    </bean>
+
+    <bean id="stu" class="com.lea.domain.Student">
+        <property name="sid" value="10"></property>
+        <property name="name" value="laobiao"></property>
+    </bean>
+
+    <bean>
+        <property name="luckColor">
+            <list>
+                <value>红色</value>
+                <value>黄色</value>
+                <value>蓝色</value>
+            </list>
+        </property>
+    </bean>
+</beans>

@@ -1,9 +1,5 @@
 package com.lea.myJavaUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 public class JavaTest {
 	/*public static void main(String[] args) {
 		List<String> list = new ArrayList<String>();
@@ -38,8 +34,7 @@ public class JavaTest {
 		System.out.println((int)j);
 	}*/
 	public static void main(String[] args) {
-		double i = 2.2;
-		double j = 0.01;
-		System.out.println(i / j);
+		String testUrl = "http://30.118.51.247:80/1/1029/3001/default/134213412341234.wav";
+		System.out.println(testUrl.substring(testUrl.lastIndexOf("/") + 1));
 	}
 }

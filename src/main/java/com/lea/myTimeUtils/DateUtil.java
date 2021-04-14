@@ -1,5 +1,7 @@
 package com.lea.myTimeUtils;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class DateUtil {
@@ -30,9 +32,16 @@ public class DateUtil {
 	public void setTotalTime(int totalTime) {
 		this.totalTime = totalTime;
 	}
+
+	//
+	public static long getTimeTodayToMidnight() {
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime midnight = now.toLocalDate().atStartOfDay().plusDays(1);
+		return ChronoUnit.SECONDS.between(now, midnight);
+	}
 	
 	public static void main(String[] args) {
-		DateUtil dateUtil = new DateUtil();
+		/*DateUtil dateUtil = new DateUtil();
 		dateUtil.setRecStartTime(new Date());
 		try {
 			Thread.sleep(3000);
@@ -41,6 +50,9 @@ public class DateUtil {
 		}
 		dateUtil.setRecEndTime(new Date());
 		dateUtil.setTotalTime(new Date(dateUtil.getRecEndTime().getTime() - dateUtil.getRecStartTime().getTime()).getSeconds());
-		System.out.println(dateUtil.getRecEndTime() + "======" + dateUtil.getRecStartTime() + "=======" + dateUtil.getTotalTime());
+		System.out.println(dateUtil.getRecEndTime() + "======" + dateUtil.getRecStartTime() + "=======" + dateUtil.getTotalTime());*/
+//		System.out.println(LocalDateTime.now());
+//		System.out.println(LocalDateTime.now().toLocalDate().atStartOfDay().plusDays(1));
+//		System.out.println(getTimeTodayToMidnight());
 	}
 }

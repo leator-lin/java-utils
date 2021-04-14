@@ -1,19 +1,35 @@
 package com.lea.test;
 
-import com.lea.domain.Person;
-import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class TestDemo {
 
-    @Test
-    public void test4() {
-        //初始化spring容器ApplicationContext，加载配置文件
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        //通过容器获取test实例
+    public static void main(String[] args) {
+//        float a = 1.0f - 0.9f;
+//        float b = 0.9f - 0.8f;
+//        if (a == b) {
+//            // 预期进入此代码快，执行其它业务逻辑
+//            // 但事实上 a==b 的结果为 false
+//            System.out.println("哈哈哈哈哈哈");
+//        }
+//        Float x = Float.valueOf(a);
+//        Float y = Float.valueOf(b);
+//        if (x.equals(y)) {
+//            // 预期进入此代码快，执行其它业务逻辑
+//            // 但事实上 equals 的结果为 false
+//            System.out.println("呵呵呵呵呵呵");
+//        }
 
-        Person person2 = (Person) applicationContext.getBean("person2");
-        System.out.println("姓名:" + person2.getName() + ";" + "性别：" + person2.getSex());
+        List<String> list = new ArrayList<>();
+        list.add("林银城");
+        list.add("林银城1");
+        Iterator iterator = list.iterator();
+        if(iterator.hasNext()) {
+            String test = (String) iterator.next();
+            test = "林银城";
+        }
+        System.out.println(list);
     }
 }

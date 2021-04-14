@@ -1,6 +1,7 @@
 package com.lea.domain;
 
 public class Person {
+    private int id;
     private String name;
     private String sex;
 
@@ -8,7 +9,8 @@ public class Person {
         System.out.println("无参构造调用了...");
     }
 
-    public Person(String name, String sex) {
+    public Person(int id, String name, String sex) {
+        this.id = id;
         this.name = name;
         this.sex = sex;
     }
@@ -27,5 +29,13 @@ public class Person {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
